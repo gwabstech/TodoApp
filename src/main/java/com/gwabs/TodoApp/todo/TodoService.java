@@ -6,11 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
 public class TodoService {
-    private static ArrayList<Todo> todos = new ArrayList<>();
+    private static List<Todo> todos = new ArrayList<>();
 
     static {
         todos.add(new Todo(1,"gwabstech@gmail.com",
@@ -25,7 +26,7 @@ public class TodoService {
     }
 
 
-    public ArrayList<Todo> getTodo(){
+    public List<Todo> getTodo(){
         return todos;
     }
 

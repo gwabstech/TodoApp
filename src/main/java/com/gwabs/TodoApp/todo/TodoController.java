@@ -6,9 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
-
-
-
+import java.util.List;
 
 
 @Controller
@@ -24,10 +22,11 @@ public class TodoController {
     }
 
     @RequestMapping("list-of-todos")
-    public String  getAllTodos(ModelMap todos){
-        ArrayList<Todo>  todoArrayList = todoService.getTodo();
-        todos.put("todoList",todoArrayList);
-      //  todos.put("todos",todoArrayList);
+    public String  getAllTodos(ModelMap model){
+        List<Todo> todoArrayList = todoService.getTodo();
+        model.addAttribute("todos", todoArrayList);
+
+
         return "todos";
     }
 

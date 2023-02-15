@@ -47,7 +47,7 @@ public class LoginAndSignUpController {
 
 
         loginDetails.put("error_message","Invalid credentials");
-
+        loginDetails.put("email",email);
         if (autenthication.authenticate(email,password)){
             //logger.info("true");
             return "welcome";

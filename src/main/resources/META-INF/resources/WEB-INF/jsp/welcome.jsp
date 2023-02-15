@@ -60,7 +60,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Welcome to My Todo List</h1>
+		<h1>Welcome Back.....</h1>
+		<h2>${email}</h2>
 		<p>Organize your day with our simple and easy-to-use todo list</p>
 		<button onclick="location.href='list-of-todos'">Get Started</button>
 	</div>

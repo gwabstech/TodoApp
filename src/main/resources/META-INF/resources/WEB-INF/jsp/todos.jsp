@@ -1,65 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Todo List</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>List Todos Page</title>
+	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.table tbody tr:hover {
+			background-color: #f5f5f5;
+		}
+		.table td {
+			vertical-align: middle;
+		}
+	</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" href="#">Todo List</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Todo List</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+					   <a class="nav-link" href="#">Add Todo</a>
+                    </li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Todos</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="ml-auto navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">New Todo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+	<div class="container">
+		<h1 class="mt-3 mb-3">Your Todos</h1>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>email</th>
+						<th>Description</th>
+						<th>Target Date</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${todos}" var="todo">
+						<tr>
+							<td>${todo.id}</td>
+							<td>${todo.email}</td>
+							<td>${todo.description}</td>
+							<td>${todo.targetDate}</td>
+							<td>${todo.done ? 'Completed' : 'Pending'}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <div class="mb-3 card">
-          <div class="card-body">
-            <h5 class="card-title">${todoList[0]["email"]}</h5>
-            <p class="card-text">${todoList[0]["description"]}.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="mb-3 card">
-          <div class="card-body">
-            <h5 class="card-title">${todoList[1]["email"]}</h5>
-            <p class="card-text">${todoList[1]["description"]}.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="mb-3 card">
-          <div class="card-body">
-            <h5 class="card-title">${todoList[2]["email"]}</h5>
-            <p class="card-text">${todoList[2]["description"]}.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

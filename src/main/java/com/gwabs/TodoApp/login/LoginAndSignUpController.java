@@ -26,11 +26,14 @@ public class LoginAndSignUpController {
     // model to pass value to the jsp view
     @RequestMapping(value = "login",method = RequestMethod.GET)
     public String login() {
-        //@RequestParam String fname,@RequestParam String lname, ModelMap model
-        //  credentials.put("email", email);
-      //  credentials.put("password", password);
-        //@RequestParam String email, @RequestParam String password, ModelMap credentials
-        // logger.info("the value is {} and {}",fname,lname);
+        /*
+             @RequestParam String fname,@RequestParam String lname, ModelMap model
+          credentials.put("email", email);
+       credentials.put("password", password);
+        @RequestParam String email, @RequestParam String password, ModelMap credentials
+         logger.info("the value is {} and {}",fname,lname);
+         */
+
         return "login";
     }
 
@@ -41,8 +44,8 @@ public class LoginAndSignUpController {
 
 
 
-        loginDetails.put("email",email);
-        loginDetails.put("password",password);
+
+
         loginDetails.put("error_message","Invalid credentials");
 
         if (autenthication.authenticate(email,password)){

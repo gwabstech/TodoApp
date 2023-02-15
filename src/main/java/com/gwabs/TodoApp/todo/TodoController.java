@@ -28,7 +28,7 @@ public class TodoController {
         ArrayList<Todo>  todoArrayList = todoService.getTodo();
         todos.put("todoList",todoArrayList);
       //  todos.put("todos",todoArrayList);
-        return "todoList";
+        return "todos";
     }
 
 }

@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-	<title>List Todos Page</title>
+	<title>My Todos</title>
 	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 	<style>
 		.table tbody tr:hover {
@@ -36,13 +36,13 @@
 	</nav>
 
 	<div class="container">
-		<h1 class="mt-3 mb-3">Your Todos</h1>
+		<h1 class="mt-3 mb-3">My Todos</h1>
 		<div class="table-responsive">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>id</th>
-						<th>email</th>
+						<th>Id</th>
+						<th>Email</th>
 						<th>Description</th>
 						<th>Target Date</th>
 						<th>Status</th>
@@ -60,6 +60,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			<a href= "add-todo" class="btn btn-success"> Add Todo </a>
 		</div>
 	</div>
 

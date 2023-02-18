@@ -60,6 +60,7 @@ public class LoginAndSignUpController {
 
     }
 
+
     @RequestMapping("sign_up")
     public String signUp() {
         return "signup";
